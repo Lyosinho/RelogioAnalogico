@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(32, 30, 30)
+}
+.clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    background-color: beige;
+    width: 500px;
+    height: 500px;
+    border: solid 5px rgb(156, 80, 29);
+}
+
+.number{
+    text-align: center;
+    position: absolute;
+    transform: rotate(calc(30deg * var(--n)));
+    inset: 20px;    
+}
+
+.number b{
+    transform: rotate(calc(-30deg * var(--n)));
+    display: inline-block;
+    font-size: 1.4em;
+}
+
+.center-dot{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: black;
+    border-radius: 100%;
+}
+
+.hours-hand, .minutes-hand, .seconds-hand{
+    position: absolute;
+    left: 50%;
+    top: 50%; 
+    transform-origin: bottom center;
+}    
+
+.hours-hand{
+    height: 100px;
+    width: 8px;
+    background-color: rgb(83, 29, 29);
+}
+
+.minutes-hand{
+    height: 140px;
+    width: 6px;
+    background-color: rgb(163, 55, 55);
+
+}
+
+.seconds-hand{
+    height: 180px;
+    width: 2px;
+    background-color: red;
+}
+
+.number[style*="--n:12"] b,
+.number[style*="--n:3"] b,   
+.number[style*="--n:6"] b,  
+.number[style*="--n:9"] b {  
+    color: darkred;
+    font-size: 2.2em;
+    font-weight: bold;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 10px;
+}
+
+.footerText{
+    color: rgb(214, 139, 89);
+    font-weight: bold;
+    font-size: 1em;
+}
